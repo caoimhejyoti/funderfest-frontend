@@ -15,7 +15,7 @@ const router = createBrowserRouter([
     element: <NavBar />,
     children: [
       { path: "/", element: <HomePage /> },
-      { path: "/festival", element: <FestivalPage /> },
+      { path: "/festival/:id", element: <FestivalPage /> },
     ],
   },
 ]);
