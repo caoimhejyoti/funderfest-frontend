@@ -10,7 +10,6 @@ export default function useFestivals() {
     getFestivals()
       .then((festivals) => {
         setFestivals(festivals);
-        console.log(festivals); //WORKING!
         setIsLoading(false);
       })
       .catch((error) => {
