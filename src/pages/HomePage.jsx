@@ -1,5 +1,8 @@
 // import { allFestivals } from "../data";
+// HOOKS
 import useFestivals from "../hooks/use-festivals";
+
+// STLYING
 import "./HomePage.css";
 
 // COMPONENTS
