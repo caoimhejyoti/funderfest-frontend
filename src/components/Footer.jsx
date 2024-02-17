@@ -1,0 +1,17 @@
+function Footer() {
+  return (
+    <>
+      <p>© Caoimhe Young</p>
+      <section id="footer_links">
+        <a href="https://github.com/caoimhejyoti" target="_blank">
+          Github
+        </a>
+        <a href="https://www.linkedin.com/in/caoimhe-young/" target="_blank">
+          LinkedIn
+        </a>
+      </section>
+    </>
+  );
+}
+
+export default Footer;
