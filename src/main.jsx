@@ -7,6 +7,7 @@ import HomePage from "./pages/HomePage.jsx";
 import FestivalPage from "./pages/FestivalPage.jsx";
 import AboutPage from "./pages/AboutPage.jsx";
 import ContactPage from "./pages/ContactPage.jsx";
+import LoginPage from "./pages/LoginPage.jsx";
 
 // COMPONENTS
 import NavBar from "./components/NavBar.jsx";
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
     element: <NavBar />,
     children: [
       { path: "/", element: <HomePage /> },
+      { path: "/login", element: <LoginPage /> },
       { path: "/festival/:id", element: <FestivalPage /> },
       { path: "/about", element: <AboutPage /> },
       { path: "/contact", element: <ContactPage /> },
