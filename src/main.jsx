@@ -3,12 +3,12 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 // PAGES
-import HomePage from "./pages/HomePage.jsx";
-import FestivalPage from "./pages/FestivalPage.jsx";
+import HomePage from "./pages/HomePage/HomePage.jsx";
+import FestivalPage from "./pages/FestivalPage/FestivalPage.jsx";
 import AboutPage from "./pages/AboutPage.jsx";
 import ContactPage from "./pages/ContactPage.jsx";
-import LoginPage from "./pages/LoginPage.jsx";
-import CreateUserPage from "./pages/CreateUserPage.jsx";
+import LoginPage from "./pages/UserPages/LoginPage.jsx";
+import CreateUserPage from "./pages/UserPages/CreateUserPage.jsx";
 
 // COMPONENTS
 import NavBar from "./components/NavBar.jsx";
