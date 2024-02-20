@@ -9,13 +9,13 @@ async function postCreateUser(firstName, lastName, email, username, password) {
     })
   );
   const url = `${import.meta.env.VITE_API_URL}/users/create-user/`;
-  const token = window.localStorage.getItem("token");
+  // const token = window.localStorage.getItem("token");
 
   const response = await fetch(url, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authentication: `Token ${token}`,
+      // Authentication: `Token ${token}`,
     },
     body: JSON.stringify({
       firstName: firstName,
