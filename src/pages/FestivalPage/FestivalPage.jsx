@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 // HOOKS
-import useFestival from "../hooks/use-festival";
+import useFestival from "../../hooks/use-festival";
 
 function FestivalPage() {
   const { id } = useParams();

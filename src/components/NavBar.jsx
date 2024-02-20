@@ -13,7 +13,9 @@ function NavBar() {
     setAuth({ token: null });
   };
   return (
-    <>
+    <header>
+      <img src="src/assets/Funderfest Logo inverted.png" />
+
       <nav>
         <p>{user}</p>
         <Link to="/">Home</Link>
@@ -25,11 +27,12 @@ function NavBar() {
           <Link to="/login">Login</Link>
         )}
         <Link to="/create-user">Register</Link>
+        <Link to="/create-festival">Create Your Event</Link>
         <Link to="/about">About</Link>
         <Link to="/contact">Contact</Link>
       </nav>
       <Outlet />
-    </>
+    </header>
   );
 }
 
