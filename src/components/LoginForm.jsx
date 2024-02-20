@@ -4,8 +4,12 @@ import { useNavigate } from "react-router-dom";
 // API
 import postLogin from "../api/post-login";
 
+// HOOKS
+import { useAuth } from "../hooks/use-auth";
+
 function LoginForm() {
   const navigate = useNavigate();
+  const { auth, setAuth } = useAuth();
   const [credentials, setCredentials] = useState({
     username: "",
     password: "",
@@ -25,6 +29,7 @@ function LoginForm() {
       postLogin(credentials.username, credentials.password).then((response) => {
         window.localStorage.setItem("token", response.token);
         window.localStorage.setItem("username", credentials.username);
+        setAuth({ token: response.token });
         navigate("/");
       });
     }
