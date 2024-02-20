@@ -23,7 +23,6 @@ function LoginForm() {
     event.preventDefault();
     if (credentials.username && credentials.password) {
       postLogin(credentials.username, credentials.password).then((response) => {
-        console.log(response);
         window.localStorage.setItem("token", response.token);
         window.localStorage.setItem("username", credentials.username);
         navigate("/");

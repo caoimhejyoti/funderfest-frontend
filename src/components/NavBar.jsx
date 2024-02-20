@@ -8,6 +8,7 @@ const user = window.localStorage.getItem("username")
         <p>{user}</p>
         <Link to="/">Home</Link>
         <Link to="/login">Login</Link>
+        <Link to="/create-user">Register</Link>
         <Link to="/about">About</Link>
         <Link to="/contact">Contact</Link>
       </nav>
