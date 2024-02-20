@@ -12,6 +12,7 @@ import CreateUserPage from "./pages/CreateUserPage.jsx";
 
 // COMPONENTS
 import NavBar from "./components/NavBar.jsx";
+import { AuthProvider } from "./components/AuthProvider.jsx";
 import Footer from "./components/Footer.jsx";
 import Header from "./components/Header.jsx";
 
@@ -32,8 +33,10 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    {/* <Header /> */}
-    <RouterProvider router={router} />
-    <Footer />
+    <AuthProvider>
+      {/* <Header /> */}
+      <RouterProvider router={router} />
+      <Footer />
+    </AuthProvider>
   </React.StrictMode>
 );
