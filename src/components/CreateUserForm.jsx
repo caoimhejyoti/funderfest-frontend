@@ -2,8 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 // API
-import postLogin from "../api/post-login";
 import postCreateUser from "../api/post-create-user";
+import postLogin from "../api/post-login";
 
 function CreateUserForm() {
   const navigate = useNavigate();
@@ -25,6 +25,7 @@ function CreateUserForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    console.log("submit button pressed");
     if (
       userDetails.firstName &&
       userDetails.lastName &&
@@ -39,9 +40,13 @@ function CreateUserForm() {
         userDetails.username,
         userDetails.password
       ).then((response) => {
-        window.localStorage.setItem("token", response.token);
-        window.localStorage.setItem("username", userDetails.username);
-        navigate("/");
+        postLogin(userDetails.username, userDetails.password).then(
+          (response) => {
+            window.localStorage.setItem("token", response.token);
+            window.localStorage.setItem("username", userDetails.username);
+            navigate("/");
+          }
+        );
       });
     }
   };
@@ -93,8 +98,9 @@ function CreateUserForm() {
           onChange={handleChange}
         />
       </div>
-      <button type="submit">Submit</button>
-      {/* // onClick={handleSubmit}>  */}
+      <button type="submit" onClick={handleSubmit}>
+        Submit
+      </button>
     </form>
   );
 }
