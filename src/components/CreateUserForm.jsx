@@ -40,13 +40,12 @@ function CreateUserForm() {
         userDetails.username,
         userDetails.password
       ).then((response) => {
-        postLogin(userDetails.username, userDetails.password).then(
-          (response) => {
+        postLogin(userDetails.username, userDetails.password)
+          .then((response) => {
             window.localStorage.setItem("token", response.token);
             window.localStorage.setItem("username", userDetails.username);
-            navigate("/");
-          }
-        );
+          })
+          .then(navigate("/")); //FIXME: thought that by separating the setting of token and the navigation, the user wouldn't need to refresh so they can see they are logged in.
       });
     }
   };
