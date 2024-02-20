@@ -25,7 +25,6 @@ function CreateUserForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("submit button pressed");
     if (
       userDetails.firstName &&
       userDetails.lastName &&
