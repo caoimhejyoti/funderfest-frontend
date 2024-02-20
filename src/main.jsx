@@ -14,7 +14,7 @@ import CreateUserPage from "./pages/CreateUserPage.jsx";
 import NavBar from "./components/NavBar.jsx";
 import { AuthProvider } from "./components/AuthProvider.jsx";
 import Footer from "./components/Footer.jsx";
-import Header from "./components/Header.jsx";
+// import Header from "./components/Header.jsx";
 
 const router = createBrowserRouter([
   {
