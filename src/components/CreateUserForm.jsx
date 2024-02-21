@@ -1,13 +1,15 @@
 // HOOKS
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import { useAuth } from "../hooks/use-auth";
 // API
 import postCreateUser from "../api/post-create-user";
 import postLogin from "../api/post-login";
 
 function CreateUserForm() {
   const navigate = useNavigate();
+  const { auth, setAuth } = useAuth();
+
   const [userDetails, setUserDetails] = useState({
     firstName: "",
     lastName: "",
@@ -44,8 +46,9 @@ function CreateUserForm() {
           .then((response) => {
             window.localStorage.setItem("token", response.token);
             window.localStorage.setItem("username", userDetails.username);
+            setAuth({ token: response.token });
           })
-          .then(navigate("/")); //FIXME: thought that by separating the setting of token and the navigation, the user wouldn't need to refresh so they can see they are logged in.
+          .then(navigate("/")); 
       });
     }
   };
