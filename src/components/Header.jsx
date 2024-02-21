@@ -3,7 +3,7 @@ import NavBar from "./NavBar";
 function Header() {
   return (
     <>
-      <img src="src/assets/Funderfest Logo inverted.png" />
+      <img src="./src/assets/Funderfest Logo inverted.png" />
       <NavBar />
     </>
   );
