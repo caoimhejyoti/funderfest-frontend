@@ -9,8 +9,6 @@ import { PhotoIcon, UserCircleIcon } from '@heroicons/react/24/solid'
 import postCreateUser from "../api/post-create-user";
 import postLogin from "../api/post-login";
 
-
-
 function CreateUserForm() {
   const navigate = useNavigate();
   const { auth, setAuth } = useAuth();
