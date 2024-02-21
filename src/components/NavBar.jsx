@@ -15,7 +15,7 @@ function NavBar() {
     };
   }, []);
   const { auth, setAuth } = useAuth();
-  const user = window.localStorage.getItem("username");
+  // const user = window.localStorage.getItem("username");
 
   const handleLogout = () => {
     window.localStorage.removeItem("token");
