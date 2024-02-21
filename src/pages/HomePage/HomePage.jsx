@@ -19,11 +19,19 @@ function HomePage() {
   }, []);
   const { festivals } = useFestivals();
   return (
-    <div id="festival-list">
-      {festivals.map((festivalData, key) => {
-        return <FestivalCard key={key} festivalData={festivalData} />;
-      })}
-    </div>
+    <>
+      <h1 className="text-3xl  font-display-head ">
+        Welcome to FunderFest Events
+      </h1>
+      <div
+        className="container inline-grid grid-cols-2 gap-4"
+        id="festival-list"
+      >
+        {festivals.map((festivalData, key) => {
+          return <FestivalCard key={key} festivalData={festivalData} />;
+        })}
+      </div>
+    </>
   );
 }
 

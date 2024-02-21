@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import "./index.css";
 
 // PAGES
 import HomePage from "./pages/HomePage/HomePage.jsx";
@@ -36,7 +37,6 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <AuthProvider>
-      {/* <Header /> */}
       <RouterProvider router={router} />
       <Footer />
     </AuthProvider>
