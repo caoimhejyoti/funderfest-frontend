@@ -10,6 +10,7 @@ function FestivalPage() {
     <>
       {/*TODO: remove before submission*/}
       <pre>{JSON.stringify(festival, null, 2)}</pre>
+      <img src={festival?.image} />
       <h2>{festival?.title}</h2>
       <h3>Created at: {festival?.date_created}</h3>
       <h3>{`Status: ${festival?.is_open}`}</h3>
