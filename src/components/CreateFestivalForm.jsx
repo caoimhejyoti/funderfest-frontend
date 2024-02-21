@@ -14,10 +14,10 @@ function CreateFestivalForm() {
     goal: "",
     image:
       "https://drive.google.com/file/d/1AqBIZiyR9GH07RFydKMMy3jS-STP6iwv/view?usp=drive_link",
-    is_open: true,
+    is_open: false,
     date_created: new Date(),
     owner: id,
-    tickets_available: false,
+    tickets_available: true,
     start_date: "",
     end_date: "",
   });
@@ -60,7 +60,12 @@ function CreateFestivalForm() {
   return (
     <form>
       <div>
-        <label htmlFor="title">Title:</label>
+        <label
+          htmlFor="title"
+          className="after:content-['*'] after:ml-0.5 after:text-red-500"
+        >
+          Title:
+        </label>
         <input
           type="text"
           id="title"
@@ -69,7 +74,12 @@ function CreateFestivalForm() {
         />
       </div>
       <div>
-        <label htmlFor="description">Description:</label>
+        <label
+          htmlFor="description"
+          className="after:content-['*'] after:ml-0.5 after:text-red-500"
+        >
+          Description:
+        </label>
         <input
           type="text"
           id="description"
@@ -78,11 +88,16 @@ function CreateFestivalForm() {
         />
       </div>
       <div>
-        <label htmlFor="goal">Goal:</label>
+        <label
+          htmlFor="goal"
+          className="after:content-['*'] after:ml-0.5 after:text-red-500"
+        >
+          Goal:
+        </label>
         <input
           type="int"
           id="goal"
-          placeholder="Enter Goal"
+          placeholder="Enter Goal value"
           onChange={handleChange}
         />
       </div>
@@ -100,11 +115,39 @@ function CreateFestivalForm() {
         <input type="checkbox" id="tickets_available" onChange={handleChange} />
       </div>
       <div>
-        <label htmlFor="start_date">When does your event start?</label>
+        <label htmlFor="is_open" className="peer-checked/draft:text-sky-950">
+          Events are automatically published. Would you like to keep this as a
+          draft?
+        </label>
+        <input
+          type="checkbox"
+          className="peer/draft"
+          id="is_open"
+          onChange={handleChange}
+        />
+        <div className="hidden peer-checked/draft:block">
+          Drafts are only visible to administrators.
+        </div>
+        <div className="hidden peer-checked/published:block">
+          Your post will be publicly visible on your site.
+        </div>
+      </div>
+      <div>
+        <label
+          htmlFor="start_date"
+          className="after:content-['*'] after:ml-0.5 after:text-red-500"
+        >
+          When does your event start?
+        </label>
         <input type="date" id="start_date" onChange={handleChange} />
       </div>
       <div>
-        <label htmlFor="end_date">When does your event end?</label>
+        <label
+          htmlFor="end_date"
+          className="after:content-['*'] after:ml-0.5 after:text-red-500"
+        >
+          When does your event end?
+        </label>
         <input type="date" id="end_date" onChange={handleChange} />
       </div>
       <button type="submit" onClick={handleSubmit}>
