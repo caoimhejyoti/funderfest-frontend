@@ -1,3 +1,4 @@
+// HOOKS
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -38,8 +39,8 @@ function CreateUserForm() {
         userDetails.email,
         userDetails.username,
         userDetails.password
-      ).then((response) => {
-        postLogin(userDetails.username, userDetails.password)
+      ).then((newUser) => {
+        postLogin(newUser.username, userDetails.password)
           .then((response) => {
             window.localStorage.setItem("token", response.token);
             window.localStorage.setItem("username", userDetails.username);

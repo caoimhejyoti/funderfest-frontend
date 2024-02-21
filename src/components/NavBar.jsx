@@ -1,9 +1,15 @@
 import { Link, Outlet } from "react-router-dom";
-
 // HOOKS
+import { useEffect } from "react";
 import { useAuth } from "../hooks/use-auth";
 
 function NavBar() {
+  useEffect(() => {
+    console.log("Navbar mounted");
+    return () => {
+      console.log("Navbar unmounted");
+    };
+  }, []);
   const { auth, setAuth } = useAuth();
   const user = window.localStorage.getItem("username");
 
@@ -14,8 +20,12 @@ function NavBar() {
   };
   return (
     <header>
-      <img src="src/assets/Funderfest Logo inverted.png" />
-
+      <a href="/">
+        <img
+          src="../src/assets/Funderfest Logo inverted.png"
+          alt="FUnderFest Events logo"
+        />
+      </a>
       <nav>
         <p>{user}</p>
         <Link to="/">Home</Link>

@@ -4,11 +4,11 @@ import useFestival from "../../hooks/use-festival";
 
 function FestivalPage() {
   const { id } = useParams();
-  // console.log(`Festival id inside festival page:${id}`); //WORKING!
   const { festival, isLoading, error } = useFestival(id);
   console.log(`festival page ${festival}`);
   return (
     <>
+      {/*TODO: remove before submission*/}
       <pre>{JSON.stringify(festival, null, 2)}</pre>
       <h2>{festival?.title}</h2>
       <h3>Created at: {festival?.date_created}</h3>
