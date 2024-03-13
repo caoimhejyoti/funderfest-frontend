@@ -9,10 +9,7 @@ import { useAuth } from "../hooks/use-auth";
 
 function PledgeForm(festivalProp) {
   const festivalId = festivalProp.festivalProp;
-  const userToken = window.localStorage.getItem("token");
-  const { auth, setAuth } = useAuth();
-
-  const username = window.localStorage.getItem("username");
+  const [pledgeSuccess, setPledgeSuccess] = useState(false);
   const navigate = useNavigate();
   const [pledgeDetails, setPledgeDetails] = useState({
     comment: "",
@@ -32,15 +29,14 @@ function PledgeForm(festivalProp) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("button pressed");
-    console.log("comment: ", pledgeDetails.comment);
-    console.log("pledge_amount: ", pledgeDetails.pledge_amount);
-    console.log("festival: ", pledgeDetails.festival);
     if (pledgeDetails.comment && pledgeDetails.pledge_amount) {
       postCreatePledge(pledgeDetails).then((newPledge) => {
-        console.log(newPledge);
-        // navigate(`/fastivals/${festivalId}`);
-        navigate("/");
+        setPledgeSuccess(true),
+          setTimeout(() => {
+            window.location.reload();
+          }, 3000);
+        navigate(`/festival/${festivalId}`);
+        // navigate("/");
       });
     } else {
       console.log("no comment/p amount");
@@ -148,6 +144,14 @@ function PledgeForm(festivalProp) {
 
         {/* )} */}
       </div>
+      {pledgeSuccess && (
+        <>
+          <h2 className="text-base font-semibold leading-7 text-gray-900">
+            Thank you for your pledge!{" "}
+          </h2>
+          <h3>This page will reload shortly to show your pledge. </h3>
+        </>
+      )}
     </form>
   );
 }
