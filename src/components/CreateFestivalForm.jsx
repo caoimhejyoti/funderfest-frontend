@@ -36,7 +36,6 @@ function CreateFestivalForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("submit button pressed");
     if (
       festivalDetails.title &&
       festivalDetails.description &&
