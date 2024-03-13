@@ -1,20 +1,8 @@
-async function postCreatePledge(
-  comment,
-  anonymous,
-  pledge_amount,
-  ticket_option,
-  festival,
-  supporter
-) {
+async function postCreatePledge(pledgeDetails) {
   console.log("post create new pledge:");
   console.log(
     JSON.stringify({
-      comment,
-      anonymous,
-      pledge_amount,
-      ticket_option,
-      festival,
-      supporter,
+      ...pledgeDetails,
     })
   );
 
@@ -28,12 +16,7 @@ async function postCreatePledge(
       Authorization: `Token ${token}`,
     },
     body: JSON.stringify({
-      comment,
-      anonymous,
-      pledge_amount,
-      ticket_option,
-      festival,
-      supporter,
+      ...pledgeDetails,
     }),
   });
   console.log("create pledge: ", newPledge);

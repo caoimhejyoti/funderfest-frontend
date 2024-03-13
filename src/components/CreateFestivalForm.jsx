@@ -134,14 +134,12 @@ function CreateFestivalForm() {
         </div>
         {/* SECTION 2 - TICKETS */}
         <div className="border-b border-gray-900/10 pb-12">
-          <label htmlFor="tickets_available">
-            Will you be offering tickets?
-          </label>
-          <input
+          <label htmlFor="tickets_available">Tickets: COMING SOON!</label>
+          {/* <input
             type="checkbox"
             id="tickets_available"
             onChange={handleChange}
-          />
+          /> */}
         </div>
         {/* SECTION 3 - AUTO PUBLISH? */}
         <div className="border-b border-gray-900/10 pb-12">
