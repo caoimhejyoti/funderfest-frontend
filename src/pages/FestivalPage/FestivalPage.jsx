@@ -1,6 +1,8 @@
 import { useParams } from "react-router-dom";
 // HOOKS
 import useFestival from "../../hooks/use-festival";
+// COMPONENTS
+import PledgeForm from "../../components/PledgeForm";
 
 function FestivalPage() {
   const { id } = useParams();
@@ -24,6 +26,7 @@ function FestivalPage() {
           );
         })}
       </ul>
+      <PledgeForm />
     </>
   );
 }
