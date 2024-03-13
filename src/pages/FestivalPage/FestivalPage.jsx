@@ -1,12 +1,20 @@
 import { useParams } from "react-router-dom";
 // HOOKS
 import useFestival from "../../hooks/use-festival";
+import { useAuth } from "../../hooks/use-auth";
 // COMPONENTS
 import PledgeForm from "../../components/PledgeForm";
 
 function FestivalPage() {
+  const { auth, setAuth } = useAuth();
   const { id } = useParams();
   const { festival, isLoading, error } = useFestival(id);
+  const owner = festival?.owner;
+  console.log("owner ", owner);
+  const user = auth.userId;
+  console.log("user ", user);
+  const isOwner = owner === auth.userId;
+  console.log("isOwner", isOwner);
   return (
     <>
       {/*TODO: remove before submission*/}
@@ -25,7 +33,22 @@ function FestivalPage() {
           );
         })}
       </ul>
-      <PledgeForm festivalProp={id} />
+      {/* TODO: ADD AUTHENTICATION TO REDUCE ACCESS & DELETE BUTTON */}
+      {/* SECTION 2 - HEADER */}
+      <div className="border-b border-gray-900/10 pb-6">
+        <h2 className="text-base font-semibold leading-7 text-gray-900">
+          Create a Pledge
+        </h2>
+      </div>
+      {/* SECTION 3 - PLEDGES */}
+      <div>
+        {/* {auth.userId && festival.owner !== auth.userId &&  */}
+        {/* SECTION 3A - PLEDGE FORM - AUTHENTICATED USERS */}
+        <PledgeForm festivalProp={id} />
+        {/* ):( */}
+        {/* SECTION 3B - CTA - LOG IN REQUIRED */}
+        {/* ) */}
+      </div>
     </>
   );
 }

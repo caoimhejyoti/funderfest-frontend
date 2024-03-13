@@ -46,14 +46,13 @@ function PledgeForm(festivalProp) {
   return (
     <form className="container">
       <div className="space-y-12">
-        {/* SECTION 1 - HEADER */}
+        {/* SECTION 1 - HEADER
         <div className="border-b border-gray-900/10 pb-6">
           <h2 className="text-base font-semibold leading-7 text-gray-900">
             Create a Pledge
           </h2>
-        </div>
-        {/* {auth.token ? ( */}
-        {/* SECTION 2A - INPUTS */}
+        </div> */}
+        {/* SECTION 2 - INPUTS */}
         <div className="border-b border-gray-900/10 pb-12">
           {/* COMMENT */}
           <div className="mt-5 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
@@ -129,7 +128,7 @@ function PledgeForm(festivalProp) {
           {/* TICKET OPTION */}
           {/* future development - tbc */}
         </div>
-        {/* SECTION 2B - SUBMIT */}
+        {/* SECTION 3 - SUBMIT */}
         <div className="mt-6 flex items-center justify-end gap-x-6">
           <button
             type="submit"
@@ -139,10 +138,6 @@ function PledgeForm(festivalProp) {
             Submit
           </button>
         </div>
-        {/* ) : ( */}
-        {/* SECTION 3 - LOG IN REQUIRED */}
-
-        {/* )} */}
       </div>
       {pledgeSuccess && (
         <>
