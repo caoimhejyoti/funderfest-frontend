@@ -1,27 +1,7 @@
-async function postCreateFestival(
-  title,
-  description,
-  goal,
-  image,
-  is_open,
-  date_created,
-  owner,
-  tickets_available,
-  start_date,
-  end_date
-) {
+async function postCreateFestival(festivalDetails) {
   console.log(
     JSON.stringify({
-      title,
-      description,
-      goal,
-      image,
-      is_open,
-      date_created,
-      owner,
-      tickets_available,
-      start_date,
-      end_date,
+      ...festivalDetails,
     })
   );
 
@@ -35,16 +15,7 @@ async function postCreateFestival(
       Authorization: `Token ${token}`,
     },
     body: JSON.stringify({
-      title,
-      description,
-      goal,
-      image,
-      is_open,
-      date_created,
-      owner,
-      tickets_available,
-      start_date,
-      end_date,
+      festivalDetails,
     }),
   });
   console.log("create festival: ", newFestival);

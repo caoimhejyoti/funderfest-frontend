@@ -44,18 +44,7 @@ function CreateFestivalForm() {
       festivalDetails.start_date &&
       festivalDetails.end_date
     ) {
-      postCreateFestival(
-        festivalDetails.title,
-        festivalDetails.description,
-        festivalDetails.goal,
-        festivalDetails.image,
-        festivalDetails.is_open,
-        festivalDetails.date_created,
-        festivalDetails.owner,
-        festivalDetails.tickets_available,
-        festivalDetails.start_date,
-        festivalDetails.end_date
-      ).then((newFestival) => {
+      postCreateFestival(festivalDetails).then((newFestival) => {
         navigate(`/festival/${newFestival.id}`);
       });
     }
