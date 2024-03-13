@@ -34,6 +34,8 @@ SO THAT I have the funding to progress with my event
 
 ## Resources
 
+https://www.geeksforgeeks.org/how-to-show-and-hide-password-in-reactjs/
+
 ## License
 
 This project is using the following license:
