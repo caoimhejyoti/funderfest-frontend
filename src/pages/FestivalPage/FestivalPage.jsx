@@ -8,6 +8,7 @@ function FestivalPage() {
   const { id } = useParams();
   const { festival, isLoading, error } = useFestival(id);
   console.log(`festival page ${festival}`);
+  console.log(id);
   return (
     <>
       {/*TODO: remove before submission*/}
@@ -26,7 +27,7 @@ function FestivalPage() {
           );
         })}
       </ul>
-      <PledgeForm />
+      <PledgeForm festivalProp={id} />
     </>
   );
 }

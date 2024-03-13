@@ -7,8 +7,11 @@ import postCreatePledge from "../api/post-create-pledge";
 // HOOKS
 import { useAuth } from "../hooks/use-auth";
 
-function PledgeForm() {
-  const { festivalId } = useParams();
+function PledgeForm(festivalProp) {
+  const festivalId = festivalProp.festivalProp;
+  const userToken = window.localStorage.getItem("token");
+  const { auth, setAuth } = useAuth();
+
   const username = window.localStorage.getItem("username");
   const navigate = useNavigate();
   const [pledgeDetails, setPledgeDetails] = useState({
@@ -17,7 +20,6 @@ function PledgeForm() {
     pledge_amount: 0,
     ticket_option: "",
     festival: festivalId,
-    supporter: username,
   });
 
   const handleChange = (event) => {
@@ -33,15 +35,9 @@ function PledgeForm() {
     console.log("button pressed");
     console.log("comment: ", pledgeDetails.comment);
     console.log("pledge_amount: ", pledgeDetails.pledge_amount);
+    console.log("festival: ", pledgeDetails.festival);
     if (pledgeDetails.comment && pledgeDetails.pledge_amount) {
-      postCreatePledge(
-        pledgeDetails.comment,
-        pledgeDetails.anonymous,
-        pledgeDetails.pledge_amount,
-        pledgeDetails.ticket_option,
-        pledgeDetails.festival,
-        pledgeDetails.supporter
-      ).then((newPledge) => {
+      postCreatePledge(pledgeDetails).then((newPledge) => {
         console.log(newPledge);
         // navigate(`/fastivals/${festivalId}`);
         navigate("/");
@@ -60,7 +56,8 @@ function PledgeForm() {
             Create a Pledge
           </h2>
         </div>
-        {/* SECTION 2 - INPUTS */}
+        {/* {auth.token ? ( */}
+        {/* SECTION 2A - INPUTS */}
         <div className="border-b border-gray-900/10 pb-12">
           {/* COMMENT */}
           <div className="mt-5 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
@@ -136,7 +133,7 @@ function PledgeForm() {
           {/* TICKET OPTION */}
           {/* future development - tbc */}
         </div>
-        {/* SECTION 3 - SUBMIT */}
+        {/* SECTION 2B - SUBMIT */}
         <div className="mt-6 flex items-center justify-end gap-x-6">
           <button
             type="submit"
@@ -146,6 +143,10 @@ function PledgeForm() {
             Submit
           </button>
         </div>
+        {/* ) : ( */}
+        {/* SECTION 3 - LOG IN REQUIRED */}
+
+        {/* )} */}
       </div>
     </form>
   );
