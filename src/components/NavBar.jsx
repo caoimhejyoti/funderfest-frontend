@@ -32,7 +32,7 @@ function NavBar() {
           <div className="flex lg:flex-1 m-1">
             <a href="/" className="-m-1.5 p-1.5">
               <img
-                src="../src/assets/Funderfest Logo inverted.png"
+                src="https://github.com/caoimhejyoti/funderfest-frontend/blob/main/src/assets/Funderfest%20Logo%20inverted.png?raw=true"
                 className="h-20 w-auto"
                 alt="FunderFest Events logo"
               />
