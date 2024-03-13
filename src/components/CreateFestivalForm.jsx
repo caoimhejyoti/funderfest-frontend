@@ -17,7 +17,7 @@ function CreateFestivalForm() {
     description: "",
     goal: "",
     image:
-      "https://drive.google.com/file/d/1AqBIZiyR9GH07RFydKMMy3jS-STP6iwv/view?usp=drive_link",
+      "https://github.com/caoimhejyoti/funderfest-frontend/blob/main/public/Funderfest_favicon.png?raw=true",
     is_open: false,
     date_created: new Date(),
     owner: id,
