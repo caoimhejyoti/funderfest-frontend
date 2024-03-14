@@ -1,5 +1,5 @@
 // COMPONENTS
-import CreateUserForm from "../../components/CreateUserForm";
+import CreateUserForm from "../../components/Users/CreateUserForm";
 
 function CreateUserPage() {
   return <CreateUserForm />;

@@ -8,7 +8,7 @@ import useFestivals from "../../hooks/use-festivals";
 import "./HomePage.css";
 
 // COMPONENTS
-import FestivalCard from "../../components/FestivalCard";
+import FestivalCard from "../../components/Festivals/FestivalCard";
 
 function HomePage() {
   useEffect(() => {

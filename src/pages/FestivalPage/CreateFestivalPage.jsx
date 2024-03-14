@@ -1,4 +1,4 @@
-import CreateFestivalForm from "../../components/CreateFestivalForm";
+import CreateFestivalForm from "../../components/Festivals/CreateFestivalForm";
 
 function CreateFestivalPage() {
   return <CreateFestivalForm />;

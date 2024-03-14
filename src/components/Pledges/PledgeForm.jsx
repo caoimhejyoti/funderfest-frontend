@@ -2,10 +2,10 @@ import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 // API
-import postCreatePledge from "../api/post-create-pledge";
+import postCreatePledge from "../../api/post-create-pledge";
 
 // HOOKS
-import { useAuth } from "../hooks/use-auth";
+import { useAuth } from "../../hooks/use-auth";
 
 function PledgeForm(festivalProp) {
   const festivalId = festivalProp.festivalProp;

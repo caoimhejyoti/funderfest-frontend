@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 import { PhotoIcon } from "@heroicons/react/24/solid";
 
 // API
-import postCreateFestival from "../api/post-create-festival";
+import postCreateFestival from "../../api/post-create-festival";
 
 function CreateFestivalForm() {
   const { id } = useParams();
