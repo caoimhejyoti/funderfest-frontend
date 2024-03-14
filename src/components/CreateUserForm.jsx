@@ -40,13 +40,7 @@ function CreateUserForm() {
       userDetails.username &&
       password
     ) {
-      postCreateUser(
-        userDetails.firstName,
-        userDetails.lastName,
-        userDetails.email,
-        userDetails.username,
-        password
-      ).then((newUser) => {
+      postCreateUser(userDetails, password).then((newUser) => {
         postLogin(newUser.username, password)
           .then((response) => {
             window.localStorage.setItem("token", response.token);

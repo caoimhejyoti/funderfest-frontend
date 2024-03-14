@@ -1,11 +1,4 @@
 async function postCreatePledge(pledgeDetails) {
-  console.log("post create new pledge:");
-  console.log(
-    JSON.stringify({
-      ...pledgeDetails,
-    })
-  );
-
   const url = `${import.meta.env.VITE_API_URL}/pledges/`;
   const token = window.localStorage.getItem("token");
 
@@ -19,7 +12,6 @@ async function postCreatePledge(pledgeDetails) {
       ...pledgeDetails,
     }),
   });
-  console.log("create pledge: ", newPledge);
   if (!newPledge.ok) {
     const fallbackError = "Error trying to create pledge";
 
