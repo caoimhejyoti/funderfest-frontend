@@ -1,13 +1,13 @@
 // HOOKS
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../hooks/use-auth";
+import { useAuth } from "../../hooks/use-auth";
 
 // import { PhotoIcon, UserCircleIcon } from '@heroicons/react/24/solid'
 
 // API
-import postCreateUser from "../api/post-create-user";
-import postLogin from "../api/post-login";
+import postCreateUser from "../../api/post-create-user";
+import postLogin from "../../api/post-login";
 
 function CreateUserForm() {
   const navigate = useNavigate();

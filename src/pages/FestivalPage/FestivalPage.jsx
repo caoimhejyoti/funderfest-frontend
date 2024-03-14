@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import useFestival from "../../hooks/use-festival";
 import { useAuth } from "../../hooks/use-auth";
 // COMPONENTS
-import PledgeForm from "../../components/PledgeForm";
+import PledgeForm from "../../components/Pledges/PledgeForm";
 
 function FestivalPage() {
   const { auth, setAuth } = useAuth();
