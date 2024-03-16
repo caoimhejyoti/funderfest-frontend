@@ -30,9 +30,14 @@ function LoginForm() {
     event.preventDefault();
     if (credentials.username && password) {
       postLogin(credentials.username, password).then((response) => {
-        window.localStorage.setItem("token", response.token);
-        window.localStorage.setItem("username", credentials.username);
-        setAuth({ token: response.token });
+        // window.localStorage.setItem("token", response.token);
+        // window.localStorage.setItem("username", response.username);
+        // window.localStorage.setItem("userID", response.user_id);
+        setAuth({
+          token: response.token,
+          username: response.username,
+          userID: response.user_id,
+        });
         navigate("/");
       });
     }
