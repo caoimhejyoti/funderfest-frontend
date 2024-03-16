@@ -8,19 +8,20 @@ import { useAuth } from "../hooks/use-auth";
 function NavBar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  useEffect(() => {
-    console.log("Navbar mounted");
-    return () => {
-      console.log("Navbar unmounted");
-    };
-  }, []);
+  // NOTE: Use Effect used to confirm React reloads.
+  // useEffect(() => {
+  //   console.log("Navbar mounted");
+  //   return () => {
+  //     console.log("Navbar unmounted");
+  //   };
+  // }, []);
   const { auth, setAuth } = useAuth();
-  // const user = window.localStorage.getItem("username");
 
   const handleLogout = () => {
     window.localStorage.removeItem("token");
     window.localStorage.removeItem("username");
-    setAuth({ token: null });
+    window.localStorage.removeItem("userID");
+    setAuth({ token: null, username: null, userID: null });
   };
   return (
     <>

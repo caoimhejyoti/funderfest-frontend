@@ -15,7 +15,7 @@ async function postCreateFestival(festivalDetails) {
       Authorization: `Token ${token}`,
     },
     body: JSON.stringify({
-      festivalDetails,
+      ...festivalDetails,
     }),
   });
   console.log("create festival: ", newFestival);
