@@ -7,7 +7,6 @@ import PledgeForm from "../../components/Pledges/PledgeForm";
 import BasicButton from "../../components/Elements/Button";
 
 function FestivalPage() {
-  const userID = useParams();
   const navigate = useNavigate();
   const { auth, setAuth } = useAuth();
   const { id } = useParams();
@@ -15,8 +14,9 @@ function FestivalPage() {
 
   const owner = festival?.owner;
   console.log("owner ", owner);
-  console.log("userID ", userID.id);
-  const isOwner = owner === userID.id;
+  const userID = auth.userID;
+  console.log("userID ", userID);
+  const isOwner = owner === userID;
   console.log("isOwner", isOwner);
 
   const handleLoginBtn = (event) => {
