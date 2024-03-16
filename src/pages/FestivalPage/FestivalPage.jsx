@@ -23,12 +23,16 @@ function FestivalPage() {
     event.preventDefault();
     navigate("/login");
   };
+  const handleSignUpBtn = (event) => {
+    event.preventDefault();
+    navigate("/create-user");
+  };
 
   return (
     <>
       {/*TODO: remove before submission*/}
+      {/* <pre>{JSON.stringify(festival, null, 2)}</pre> */}
 
-      <pre>{JSON.stringify(festival, null, 2)}</pre>
       {/* SECTION 1 - FESTIVAL DETAILS */}
       <section className="bg-green-300 pb-6">
         {/* SECTION 1A - FESTIVAL INFORMATION */}
@@ -71,16 +75,22 @@ function FestivalPage() {
           </h3>
 
           {/* SECTION 2B - PLEDGE CREATION */}
-          <div>
-            {/* {auth.userId && festival.owner !== auth.userId &&  */}
-            {/* SECTION 2B-1 - PLEDGE FORM - AUTHENTICATED USERS */}
+          {/* <div> */}
+          {/* SECTION 2B-1 - PLEDGE FORM - AUTHENTICATED USERS */}
+          {userID ? (
             <PledgeForm festivalProp={id} />
-            {/* ):( */}
-            {/* SECTION 2B-2 - CTA - LOG IN REQUIRED */}
-
-            <BasicButton message="Go to login" btnClick={handleLoginBtn} />
-            {/* ) */}
-          </div>
+          ) : (
+            <>
+              <p>
+                If you want to support this event - please login or create an
+                account.{" "}
+              </p>
+              <BasicButton message="Login" btnClick={handleLoginBtn} />
+              <BasicButton message="Sign up" btnClick={handleSignUpBtn} />
+            </>
+          )}
+          {/* SECTION 2B-2 - CTA - LOG IN REQUIRED */}
+          {/* </div> */}
         </div>
       </section>
     </>
