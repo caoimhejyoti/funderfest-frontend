@@ -24,6 +24,7 @@ async function postLogin(username, password) {
     const errorMessage = data?.detail ?? fallbackError;
     throw new Error(errorMessage);
   }
+
   return await response.json();
 }
 

@@ -7,6 +7,7 @@ import PledgeForm from "../../components/Pledges/PledgeForm";
 import BasicButton from "../../components/Elements/Button";
 
 function FestivalPage() {
+  const userID = useParams();
   const navigate = useNavigate();
   const { auth, setAuth } = useAuth();
   const { id } = useParams();
@@ -14,12 +15,11 @@ function FestivalPage() {
 
   const owner = festival?.owner;
   console.log("owner ", owner);
-  const user = auth.userId;
-  console.log("user ", user);
-  const isOwner = owner === auth.userId;
+  console.log("userID ", userID.id);
+  const isOwner = owner === userID.id;
   console.log("isOwner", isOwner);
 
-  const handleSubmit = (event) => {
+  const handleLoginBtn = (event) => {
     event.preventDefault();
     navigate("/login");
   };
@@ -29,12 +29,25 @@ function FestivalPage() {
       {/*TODO: remove before submission*/}
 
       <pre>{JSON.stringify(festival, null, 2)}</pre>
-      {/* SECTION 1 - FESTIVAL INFORMATION */}
+      {/* SECTION 1 - FESTIVAL DETAILS */}
       <section className="bg-green-300 pb-6">
+        {/* SECTION 1A - FESTIVAL INFORMATION */}
         <img src={festival?.image} />
         <h2>{festival?.title}</h2>
         <h3>Created at: {festival?.date_created}</h3>
         <h3>{`Status: ${festival?.is_open}`}</h3>
+
+        {/* SECTION 1B - FESTIVAL EDITING */}
+        {isOwner && (
+          <>
+            <p>Testing access</p>
+            <BasicButton message="Delete - login" btnClick={handleLoginBtn} />
+            <BasicButton
+              message="Update Festvial - login"
+              btnClick={handleLoginBtn}
+            />
+          </>
+        )}
       </section>
       {/* TODO: ADD AUTHENTICATION TO REDUCE ACCESS & DELETE BUTTON */}
       {/* SECTION 2 - PLEDGE DETAILS */}
@@ -65,7 +78,7 @@ function FestivalPage() {
             {/* ):( */}
             {/* SECTION 2B-2 - CTA - LOG IN REQUIRED */}
 
-            <BasicButton message="Go to login" btnClick={handleSubmit} />
+            <BasicButton message="Go to login" btnClick={handleLoginBtn} />
             {/* ) */}
           </div>
         </div>
