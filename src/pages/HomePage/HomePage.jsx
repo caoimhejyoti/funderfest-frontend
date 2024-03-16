@@ -11,12 +11,13 @@ import "./HomePage.css";
 import FestivalCard from "../../components/Festivals/FestivalCard";
 
 function HomePage() {
-  useEffect(() => {
-    console.log("home page mounted");
-    return () => {
-      console.log("home page unmounted");
-    };
-  }, []);
+  // NOTE: Use Effect used to confirm React reloads.
+  // useEffect(() => {
+  //   console.log("home page mounted");
+  //   return () => {
+  //     console.log("home page unmounted");
+  //   };
+  // }, []);
   const { festivals } = useFestivals();
   return (
     <>
