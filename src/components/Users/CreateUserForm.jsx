@@ -43,7 +43,7 @@ function CreateUserForm() {
       postCreateUser(userDetails, password).then((newUser) => {
         postLogin(newUser.username, password)
           .then((response) => {
-            // window.localStorage.setItem("token", response.token);
+            window.localStorage.setItem("token", response.token);
             // window.localStorage.setItem("username", response.username);
             // window.localStorage.setItem("userID", response.user_id);
             setAuth({
