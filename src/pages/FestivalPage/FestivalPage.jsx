@@ -19,6 +19,11 @@ function FestivalPage() {
   const isOwner = owner === userID;
   console.log("isOwner", isOwner);
 
+  // BTN FNCS
+  const handleUpdateFestivalBtn = (event) => {
+    event.preventDefault();
+    navigate(`/festival/${id}/update`);
+  };
   const handleLoginBtn = (event) => {
     event.preventDefault();
     navigate("/login");
@@ -48,7 +53,7 @@ function FestivalPage() {
             <BasicButton message="Delete - login" btnClick={handleLoginBtn} />
             <BasicButton
               message="Update Festvial - login"
-              btnClick={handleLoginBtn}
+              btnClick={handleUpdateFestivalBtn}
             />
           </>
         )}
