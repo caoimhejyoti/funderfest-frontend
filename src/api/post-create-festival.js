@@ -18,7 +18,7 @@ async function postCreateFestival(festivalDetails) {
       ...festivalDetails,
     }),
   });
-  console.log("create festival: ", newFestival);
+  // console.log("create festival: ", newFestival);
   if (!newFestival.ok) {
     const fallbackError = "Error trying to create festival";
 
