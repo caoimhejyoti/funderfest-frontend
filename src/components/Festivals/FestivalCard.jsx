@@ -3,9 +3,6 @@ import "./FestivalCard.css";
 
 function FestivalCard(props) {
   const { festivalData } = props;
-  console.log(
-    `Festival data inside FestivalCard(): ${festivalData.festivalData}`
-  );
   const festivalLink = `festival/${festivalData.id}`;
 
   return (
