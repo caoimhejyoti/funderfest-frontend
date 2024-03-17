@@ -50,9 +50,9 @@ function FestivalPage() {
         {isOwner && (
           <>
             <p>Testing access</p>
-            <BasicButton message="Delete - login" btnClick={handleLoginBtn} />
+            {/* <BasicButton message="Delete" btnClick={handleLoginBtn} /> */}
             <BasicButton
-              message="Update Festvial - login"
+              message="Update Festvial"
               btnClick={handleUpdateFestivalBtn}
             />
           </>
