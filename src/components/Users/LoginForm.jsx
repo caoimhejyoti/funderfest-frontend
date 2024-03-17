@@ -32,7 +32,7 @@ function LoginForm() {
       postLogin(credentials.username, password).then((response) => {
         window.localStorage.setItem("token", response.token);
         // window.localStorage.setItem("username", response.username);
-        // window.localStorage.setItem("userID", response.user_id);
+        window.localStorage.setItem("userID", response.user_id);
         setAuth({
           token: response.token,
           username: response.username,
