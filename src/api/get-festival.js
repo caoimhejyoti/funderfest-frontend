@@ -1,6 +1,4 @@
 async function getFestival(festivalId) {
-  console.log("Inside getFestival()");
-
   const url = `${import.meta.env.VITE_API_URL}/festivals/${festivalId}`;
 
   const response = await fetch(url, { method: "GET" });
