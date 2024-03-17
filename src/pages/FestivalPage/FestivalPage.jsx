@@ -12,11 +12,13 @@ function FestivalPage() {
   const { id } = useParams();
   const { festival, isLoading, error } = useFestival(id);
 
+  console.log(festival);
+
   const owner = festival?.owner;
   console.log("owner ", owner);
   const userID = auth.userID;
   console.log("userID ", userID);
-  const isOwner = owner === userID;
+  const isOwner = owner == userID;
   console.log("isOwner", isOwner);
 
   // BTN FNCS
@@ -34,17 +36,17 @@ function FestivalPage() {
   };
 
   return (
-    <>
-      {/*TODO: remove before submission*/}
-      {/* <pre>{JSON.stringify(festival, null, 2)}</pre> */}
+    <main className="container bg-pink-600 py-6 rounded-lg">
+      {/* used for debugging */}
+      {/* <pre>{JSON.stringify(festival, null, 2)}</pre>  */}
 
       {/* SECTION 1 - FESTIVAL DETAILS */}
-      <section className="bg-green-300 pb-6">
+      <section className="bg-violet-600 py-6 container rounded-lg">
         {/* SECTION 1A - FESTIVAL INFORMATION */}
-        <img src={festival?.image} />
-        <h2>{festival?.title}</h2>
+        <img className="mx-auto pb-6 rounded-lg" src={festival?.image} />
+        <h2 className="text-xl font-bold text-orange-200">{festival?.title}</h2>
         <h3>Created at: {festival?.date_created}</h3>
-        <h3>{`Status: ${festival?.is_open}`}</h3>
+        <h3>{`Owner: ${festival?.owner}`}</h3>
 
         {/* SECTION 1B - FESTIVAL EDITING */}
         {isOwner && (
@@ -60,7 +62,7 @@ function FestivalPage() {
       </section>
       {/* TODO: ADD AUTHENTICATION TO REDUCE ACCESS & DELETE BUTTON */}
       {/* SECTION 2 - PLEDGE DETAILS */}
-      <section className="bg-red-300 pb-6">
+      <section className="bg-orange-500 py-6 container rounded-lg mt-3">
         <h2 className="text-base font-semibold leading-7 text-gray-900">
           Pledges:
         </h2>
@@ -68,14 +70,16 @@ function FestivalPage() {
           {festival?.pledges.map((pledgeData, key) => {
             return (
               <li key={key}>
-                {pledgeData.amount} from {pledgeData.supporter}
+                {`$ ${pledgeData.pledge_amount} from ${pledgeData.supporter}.`}
+                <br />
+                {`${pledgeData.supporter} commented: "${pledgeData.comment}"`}
               </li>
             );
           })}
         </ul>
         <div className="border-b border-gray-900/10 pb-6 ">
           {/* SECTION 2A - HEADER */}
-          <h3 className="text-base font-semibold leading-7 text-gray-900">
+          <h3 className="text-base font-semibold py-2 leading-7 text-gray-900">
             Create a Pledge
           </h3>
 
@@ -98,7 +102,7 @@ function FestivalPage() {
           {/* </div> */}
         </div>
       </section>
-    </>
+    </main>
   );
 }
 

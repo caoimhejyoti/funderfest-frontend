@@ -50,11 +50,11 @@ function CreateFestivalForm() {
   };
 
   return (
-    <>
-      <h2>Create an event</h2>
+    <main className="container bg-pink-600 py-6 rounded-lg">
+      <h2 className="text-xl font-bold text-orange-200">Create an event</h2>
 
-      <form className="container">
-        <div className="space-y-12">
+      <form className="container bg-violet-600 py-6 rounded-lg">
+        <div className="space-y-12 bg-orange-200 rounded-lg p-3">
           {/* SECTION 1 - EVENT DETAILS */}
           <div className="border-b border-gray-900/10 pb-12">
             {/* EVENT TITLE */}
@@ -187,7 +187,7 @@ function CreateFestivalForm() {
           </div>
         </div>
       </form>
-    </>
+    </main>
   );
 }
 
