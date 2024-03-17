@@ -6,9 +6,9 @@ function FestivalCard(props) {
   const festivalLink = `festival/${festivalData.id}`;
 
   return (
-    <div className="festival-card">
+    <div className="festival-card bg-orange-500 py-6 px-3 rounded-lg ">
       <Link to={festivalLink}>
-        <img src={festivalData.image} />
+        <img className="mx-auto rounded-lg" src={festivalData.image} />
         <h3>{festivalData.title}</h3>
       </Link>
     </div>

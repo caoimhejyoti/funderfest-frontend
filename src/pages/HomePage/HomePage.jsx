@@ -20,19 +20,17 @@ function HomePage() {
   // }, []);
   const { festivals } = useFestivals();
   return (
-    <>
-      <h1 className="text-3xl  font-display-head ">
-        Welcome to FunderFest Events
-      </h1>
+    <main className="container flex-col align-middle bg-pink-600 py-6 rounded-lg">
+      <h1 className="text-3xl text-orange-200">Welcome to FunderFest Events</h1>
       <div
-        className="container inline-grid grid-cols-2 gap-4"
+        className="container  bg-violet-600 py-6 inline-grid grid-cols-2 gap-4 rounded-lg"
         id="festival-list"
       >
         {festivals.map((festivalData, key) => {
           return <FestivalCard key={key} festivalData={festivalData} />;
         })}
       </div>
-    </>
+    </main>
   );
 }
 

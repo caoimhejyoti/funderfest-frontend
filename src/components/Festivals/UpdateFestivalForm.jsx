@@ -69,12 +69,12 @@ function UpdateFestivalForm(props) {
   };
 
   return (
-    <main className="container">
+    <main className="container  bg-pink-600 py-6 rounded-lg">
       {/* SECTION 1 - Current event details */}
-      <section>
-        <h2>Update your event</h2>
+      <section className="container bg-violet-600 py-6 rounded-lg">
+        <h2 className="text-xl font-bold text-orange-200">Update your event</h2>
         <h3>Current Event details</h3>
-        <table className="table-auto border-2 border-black">
+        <table className="table-auto border-2 bg-orange-200 rounded-lg border-black">
           <tbody>
             <tr>
               <td className="border-2 border-black">Current Event Name</td>
@@ -126,8 +126,8 @@ function UpdateFestivalForm(props) {
         </table>
       </section>
       {/* SECTION 2- Update form */}
-      <section>
-        <h3>Update form</h3>
+      <section className="bg-orange-500 py-6 container rounded-lg mt-3">
+        <h2 className="text-xl font-bold text-violet-600">Update form</h2>
         <p>Only change the event details you need to. </p>
         <form className="container">
           <div className="space-y-12">
