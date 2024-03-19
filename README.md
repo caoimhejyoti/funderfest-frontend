@@ -30,6 +30,18 @@ I WANT a platform that allows people to purchase tickets to support my event
 SO THAT I have the funding to progress with my event
 ```
 
+## Demo Images
+
+![Image showing the create festival form on desktop](assets/readme_imgs/funderfest_create_festival_desktop.png)
+
+![Image showing the create festival form on iphone](assets/readme_imgs/funderfest_create_festival_iphone.png)
+
+![Image showing the events page with pledges](assets/readme_imgs/funderfest_events_page_with_pledge.png)
+
+![Image showing the homepage](assets/readme_imgs/funderfest_homepage.png)
+
+![Image showing the expanding navbar](assets/readme_imgs/funderfest_menu.png)
+
 ## Future Developments
 
 ## Resources
