@@ -45,7 +45,10 @@ function FestivalPage() {
         {/* SECTION 1A - FESTIVAL INFORMATION */}
         <img className="mx-auto pb-6 rounded-lg" src={festival?.image} />
         <h2 className="text-xl font-bold text-orange-200">{festival?.title}</h2>
-        <h3>Created at: {festival?.date_created}</h3>
+        <h3>
+          Created at:{" "}
+          {new Date(festival?.date_created).toLocaleDateString("en-GB")}
+        </h3>
         <h3>{`Owner: ${festival?.owner}`}</h3>
 
         {/* SECTION 1B - FESTIVAL EDITING */}
