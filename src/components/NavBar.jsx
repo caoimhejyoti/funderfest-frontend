@@ -115,7 +115,7 @@ function NavBar() {
             <div className="flex items-center justify-between">
               <a href="/" className="-m-1.5 p-1.5">
                 <img
-                  src="../src/assets/Funderfest Logo inverted.png"
+                  src="https://github.com/caoimhejyoti/funderfest-frontend/blob/main/src/assets/Funderfest%20Logo%20inverted.png?raw=true"
                   className="h-10 w-auto"
                   alt="FunderFest Events logo"
                 />
