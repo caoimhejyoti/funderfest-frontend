@@ -113,13 +113,17 @@ function UpdateFestivalForm(props) {
                 Current Event start date
               </td>
               <td className="border-2 border-black">
-                {festivalDetails?.start_date}
+                {new Date(festivalDetails?.start_date).toLocaleDateString(
+                  "en-GB"
+                )}
               </td>
             </tr>
             <tr>
               <td className="border-2 border-black">Current Event end date</td>
               <td className="border-2 border-black">
-                {festivalDetails?.end_date}
+                {new Date(festivalDetails?.end_date).toLocaleDateString(
+                  "en-GB"
+                )}
               </td>
             </tr>
           </tbody>
@@ -136,10 +140,7 @@ function UpdateFestivalForm(props) {
               {/* EVENT TITLE */}
               <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                 <div className="sm:col-span-4">
-                  <label
-                    htmlFor="title"
-                    className="after:content-['*'] after:ml-0.5 after:text-red-500"
-                  >
+                  <label htmlFor="title" className="">
                     Title:
                   </label>
                   <input
@@ -154,10 +155,7 @@ function UpdateFestivalForm(props) {
 
               {/* EVENT DESCRIPTION */}
               <div className="mt-10 grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-6">
-                <label
-                  htmlFor="description"
-                  className="after:content-['*'] after:ml-0.5 after:text-red-500"
-                >
+                <label htmlFor="description" className="">
                   Description:
                 </label>
                 <input
@@ -170,10 +168,7 @@ function UpdateFestivalForm(props) {
 
               {/* EVENT GOAL */}
               <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-                <label
-                  htmlFor="goal"
-                  className="after:content-['*'] after:ml-0.5 after:text-red-500"
-                >
+                <label htmlFor="goal" className="">
                   Goal:
                 </label>
                 <input
@@ -234,19 +229,13 @@ function UpdateFestivalForm(props) {
             {/* SECTION 4 - DATES */}
             <div className="border-b border-gray-900/10 pb-12">
               <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-                <label
-                  htmlFor="start_date"
-                  className="after:content-['*'] after:ml-0.5 after:text-red-500"
-                >
+                <label htmlFor="start_date" className="">
                   When does your event start?
                 </label>
                 <input type="date" id="start_date" onChange={handleChange} />
               </div>
               <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-                <label
-                  htmlFor="end_date"
-                  className="after:content-['*'] after:ml-0.5 after:text-red-500"
-                >
+                <label htmlFor="end_date" className="">
                   When does your event end?
                 </label>
                 <input type="date" id="end_date" onChange={handleChange} />
