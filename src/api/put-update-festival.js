@@ -2,7 +2,7 @@ async function putUpdateFestival(festivalDetails, id) {
   console.log(JSON.stringify({ ...festivalDetails }));
   console.log(JSON.stringify({ id }));
 
-  const url = `${import.meta.env.VITE_API_URL}/festivals/${id}`;
+  const url = `${import.meta.env.VITE_API_URL}/festivals/${id}/`;
   console.log(url);
   const token = window.localStorage.getItem("token");
   console.log(token);
